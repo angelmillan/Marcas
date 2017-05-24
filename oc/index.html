@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Examen Óscar Caparrós</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+    
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/marcadores.js"></script>
+    <script src="js/noticias.js"></script>
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <h2>Examen Óscar Caparrós Tortosa</h2>
+    
+        <div class="container well well-sm" id="contenedorPrincipal">
+            <p>Inserta una url y pulsa aceptar:</p>
+            <div class="form-group">
+                <input type="text" class="form-control" id="urlAlimentador" placeholder="Inserta una url aquí (RSS o ATOM)"><br>
+                <button type="button" onclick="enviarUrl()">Aceptar</button> 
+                <button type="button" onclick="limpiarUrl()">Limpiar</button> 
+            </div>
+        </div>
+        <br>
+        <div class="container well well-sm" id="contenedorSecundario">
+        
+        </div>
+        
+        <div id="error"></div>
+        
+    </div>
+
+</body>
+</html>
